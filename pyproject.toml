@@ -1,0 +1,30 @@
+[project]
+name = "skills-quest"
+version = "0.1.0"
+description = "Bayesian modeling, retrieval, and PySpark on US public health data"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "pandas>=2.2",
+    "matplotlib>=3.9",
+    "requests>=2.32",
+    "ipykernel>=6.29",
+]
+
+[dependency-groups]
+bayes = [
+    "pymc>=5.16",
+    "arviz>=0.19",
+]
+rag = [
+    "rank-bm25>=0.2.2",
+    "sentence-transformers>=3.0",
+    "faiss-cpu>=1.8",
+    "pypdf>=5.0",
+]
+spark = [
+    "pyspark>=4.0",
+    "pyarrow>=17",
+]
+
+[tool.uv]
+default-groups = ["bayes", "rag", "spark"]
